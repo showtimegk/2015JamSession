@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Web Resume</title>
+        <link href="css/siteGreen.css" rel="stylesheet">
+        <style type="text/css">
+        </style>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //start dashboard
+                $('#dashboard').hover(
+                        function () {
+                            $(this).stop().animate(
+                                    {
+                                        left: '0',
+                                        backgroundColor: 'rgb(85,91,74)'
+                                    },
+                            500, 'easeInSine'); // end animate
+                        },
+                        function () {
+                            $(this).stop().animate(
+                                    {
+                                        left: '-92px',
+                                        backgroundColor: '#DAE9BC'
+                                    },
+                            1500, 'easeOutBounce'); // end animate
+                        }
+                ); // end hover
+                //this is the quotes
+                $('span.pq').each(function () {
+                    var quote = $(this).clone();
+                    quote.removeClass('pq');
+                    quote.addClass('pullquote');
+                    $(this).before(quote);
+                }); // end each and quotes
+                //this is the drop down FAQ
+                $('.answer').hide();
+                $('.main h2').click(function () {
+                    var $answer = $(this).next('.answer');
+                    if ($answer.is(':hidden')) {
+                        $answer.slideDown();
+                        $(this).addClass('close');
+                    } else {
+                        $answer.slideUp();
+                        $(this).removeClass('close');
+                    }
+
+                }); // end click
+            }); // end ready
+        </script>	
+    </head>
+    <body>
+
+        <header id="header">
+            <h1>My Name</h1>
+            <p>My Profession</p>
+        </header>
+
+        <div id="container">
+            <div id="dashboard">                
+
+                <a href="#"><img src="images/small/index.png" width="70" height="70" alt="index"></a><br>
+                <a href="#"><img src="images/small/me.png" width="70" height="70" alt="me"></a><br>
+                <a href="#"><img src="images/small/contact.png" width="70" height="70" alt="contact"></a><br>
+                <a href="#"><img src="images/small/facebook.png" width="70" height="70" alt="facebook"></a><br>
+                <a href="#"><img src="images/small/linkedin.png" width="70" height="70" alt="linkedin"></a><br>
+
+            </div>
+
+            <main id="center" class="column">
+                <article>
+
+                    <h1>Cover Letter</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum cursus blandit. Nunc a maximus 
+                        justo. Nullam ac congue eros. Ut eget efficitur metus. <span class="pq">Curabitur vitae tellus suscipit, ultrices elit 
+                            suscipit, facilisis ipsum. Praesent porttitor justo at nisi laoreet, et dapibus quam semper. In nec 
+                            imperdiet elit.</span> In vulputate aliquam tincidunt. Nunc ultrices nulla nisi, nec dignissim tellus maximus 
+                        non. Vivamus auctor, metus id consequat gravida, felis urna dignissim nisl, sed malesuada elit erat et 
+                        diam.</p>
+
+                    <p>Pellentesque in sapien varius sem imperdiet iaculis. In egestas placerat efficitur. Quisque non mauris ac 
+                        dolor tempus malesuada. Integer viverra est convallis dignissim tincidunt. Vivamus id volutpat mi. Sed id
+                        ipsum molestie nulla ullamcorper gravida. Fusce faucibus euismod est, sit amet molestie nisi pharetra quis.
+                        Aliquam a rhoncus ante, at viverra neque. Nam eu massa ut felis euismod aliquet. Morbi et dui ac augue 
+                        sagittis ornare ac vitae urna. Etiam tempus, sem eget finibus eleifend, orci lacus porttitor diam, tincidunt
+                        pharetra lectus leo at tortor. Suspendisse pharetra odio eu aliquam facilisis.</p>
+
+                    <p>Quisque tempus, eros in dignissim imperdiet, nibh ligula tincidunt ante, facilisis pretium velit est sit 
+                        amet neque. Mauris nec sapien at magna commodo finibus. Cras ac lorem molestie, placerat metus id, rhoncus
+                        risus. Pellentesque eu nibh sodales, venenatis justo vel, placerat ex. Vestibulum finibus gravida purus a
+                        suscipit. Curabitur tristique lobortis nunc, ut egestas purus commodo quis. Nulla vitae dui sollicitudin 
+                        velit elementum tincidunt pretium quis purus. Suspendisse gravida lacus et fringilla suscipit. Curabitur 
+                        magna turpis, maximus sed ornare nec, sollicitudin scelerisque nisi. Praesent tristique, elit vitae congue
+                        congue, sapien libero gravida erat, nec eleifend nibh sapien non dolor. Vivamus posuere enim vitae aliquam
+                        feugiat. Curabitur ac sem eget dui fermentum convallis. Mauris blandit, est accumsan ullamcorper bibendum,
+                        tellus enim laoreet est, ac egestas dui nisi eget dui.</p>
+                    <h2>Why Hire Me</h2>
+                    <p>Fusce eget nisl arcu. Integer quis laoreet sem. Sed nunc justo, imperdiet sit amet venenatis sed, pharetra
+                        non ex.<span class="pq"> Proin sodales, sem at mollis gravida, eros urna egestas purus, dictum tristique dolor odio nec massa.
+                            Fusce consequat nunc a diam fringilla placerat ut quis lacus. Aliquam pharetra ante imperdiet tincidunt
+                            posuere.</span> Donec quis posuere orci. Mauris ut nulla in lorem finibus porta. Etiam ipsum ex, ultrices in 
+                        egestas ac, congue id mauris.</p>
+
+                    <p>Fusce eu eros pellentesque nibh malesuada convallis ac et justo. Nam mattis orci sed luctus dictum. Quisque
+                        vitae risus laoreet leo mollis hendrerit. Sed gravida turpis eget metus congue, sed tincidunt ipsum rutrum.
+                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut ut lectus a eros
+                        pellentesque sagittis. Vestibulum ante mauris, malesuada at ipsum ut, fringilla ultricies nisi. Sed eget 
+                        justo eget nibh feugiat venenatis. Donec interdum varius sapien.</p>
+                    <h2>What I Bring to the Table</h2>
+                    <p>Mauris ornare volutpat sapien, scelerisque consectetur tortor efficitur non. Integer sem tellus, lacinia a
+                        lacinia vitae, bibendum ac ipsum. Duis augue velit, iaculis eget venenatis vel, fermentum id eros. Phasellus
+                        turpis dui, mattis ac orci vel, accumsan dapibus lectus. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. In lacinia egestas quam eu sagittis. Pellentesque purus eros, rhoncus sed ornare ac, molestie nec 
+                        massa. In ac neque nec enim lacinia euismod. Vestibulum id lectus sit amet urna dapibus maximus. Vivamus 
+                        efficitur felis ac dui maximus dapibus. Ut nunc enim, ultrices quis neque eu, vehicula vehicula sem. 
+                        Aliquam porta fermentum pretium. Ut condimentum nibh non felis tincidunt, nec dignissim nunc lacinia. 
+                        Mauris non justo a arcu facilisis iaculis id vitae risus.</p>
+
+                </article>								
+            </main>
+
+            <nav id="left" class="column">
+
+            </nav>
+
+
+            <div id="right" class="column">
+                <h3>FAQ</h3>
+                <p>
+                <ul>
+                    <li>Fact 1</li>
+                    <li>Fact 2</li>
+                    <li>Fact 3</li>
+                    <li>Fact 4</li>
+                </ul>
+                </p>
+            </div>
+
+        </div>
+
+        <div id="footer-wrapper">
+            <footer id="footer"><p>My Name, my contact info, <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">email</a></p></footer>
+        </div>
+
+    </body>
+
+</html>
